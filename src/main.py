@@ -9,7 +9,7 @@ from motor.motor_asyncio import AsyncIOMotorClient
 from pydantic import BaseModel
 import uvicorn
 
-from .dal import ToDoDAL, ListSummary, ToDoList
+from dal import ToDoDAL, ListSummary, ToDoList
 from fastapi.middleware.cors import CORSMiddleware
 
 
@@ -120,7 +120,7 @@ async def get_dummy() -> DummyResponse:
 
 def main(argv=sys.argv[1:]):
     try:
-        uvicorn.run("main:app", host="0.0.0.0", port=3000, reload=DEBUG)
+        uvicorn.run("main:app", host="0.0.0.0", port=3001, reload=DEBUG)
     except KeyboardInterrupt:
       pass
 
